@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <title>Cars</title>
+  </head>
+  <body>
+    <main>
+      <div class="container py-4">
+        <header class="pb-3 mb-4 border-bottom">
+          <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">
+                <img
+                  src="./img/carIcon.svg"
+                  alt="car imge"
+                  width="40"
+                  height="40"
+                  class="d-inline-block align-text-top"
+                />
+                <span class="text-center fs-4 text-uppercase fw-bold"
+                  >Cars.com</span
+                >
+              </a>
+            </div>
+          </nav>
+        </header>
+        <div class="p-5 mb-4 bg-light rounded-3 shadow">
+          <h2>Our Inventory</h2>
+          <table class="table table-sm table-hover shadow-sm">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Model</th>
+                <th scope="col">Manufactor</th>
+                <th scope="col">Type</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody class="tbody"></tbody>
+          </table>
+        </div>
+        <div class="row align-items-md-stretch">
+          <div class="col-md-6 mb-3">
+            <div class="h-100 p-5 text-bg-dark rounded-3">
+              <h4>Add Vehicle</h4>
+              <div>
+                <form action="" id="addVehicle">
+                  <div class="mb-3">
+                    <label for="Model" class="form-label">Model:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="Model"
+                      aria-describedby="emailHelp"
+                      placeholder="Accord"
+                      required
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="Type" class="form-label">Vehicle Type:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="Type"
+                      placeholder="Sedan"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="Maker" class="form-label">Maker:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="Maker"
+                      placeholder="Hyundai"
+                    />
+                  </div>
+                </form>
+              </div>
+              <button class="btn btn-primary">Add</button>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="h-100 p-5 text-bg-light border rounded-3">
+              <h4>Update Vehicle</h4>
+              <div>
+                <form action="" id="UpdateVehicle">
+                  <div class="mb-3">
+                    <label for="vehicleId" class="form-label"
+                      >Vehicle ID:</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="vehicleId"
+                      aria-describedby="emailHelp"
+                      placeholder="ID #"
+                      required
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="updateModel" class="form-label">Model:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="updateModel"
+                      aria-describedby="emailHelp"
+                      placeholder="Atima"
+                      required
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="updateType" class="form-label"
+                      >Vehicle Type:</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="updateType"
+                      placeholder="Sedan"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="updateMaker" class="form-label">Maker:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="updateMaker"
+                      placeholder="Toyota"
+                    />
+                  </div>
+                </form>
+              </div>
+              <button class="btn btn-info" id="update">Update</button>
+            </div>
+          </div>
+        </div>
+        <footer class="pt-3 mt-4 text-muted border-top">©copyright 2023</footer>
+      </div>
+    </main>
+
+    <script src="logic.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  </body>
+</html>
