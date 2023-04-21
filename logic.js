@@ -3,15 +3,20 @@ const URL = "https://643d8ccb6c30feced81531da.mockapi.io/cars";
 let btnEl = document.querySelector(".btn");
 let btnUpdate = document.querySelector("#update");
 
-fetch(URL) //Dispay API Data to the console
-  .then((response) => response.json())
-  .then((data) => {
-    tableData = data;
-    displayVehicleData(data);
-  })
-  .catch((error) => {
-    console.error("Error fetching data:", error);
-  });
+getData();
+
+function getData() {
+  fetch(URL) //Dispay API Data to the console
+    .then((response) => response.json())
+    .then((data) => {
+      tableData = data;
+      displayVehicleData(data);
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
+}
+
 function displayVehicleData(data) {
   $(".tbody").empty();
   for (let i = 0; i < data.length; i++) {
@@ -78,16 +83,8 @@ btnUpdate.addEventListener("click", function updateVehicle() {
     }),
   })
     .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      tableData = tableData.map((vehicle) => {
-        if (vehicle.id === id) {
-          return data;
-        } else {
-          return vehicle;
-        }
-      });
-      displayVehicleData(tableData);
+    .then(() => {
+      getData();
       $("#UpdateVehicle").trigger("reset");
     })
     .catch((error) => console.error(error));
@@ -105,13 +102,6 @@ function deleteVehicle(id) {
     },
   })
     .then((response) => response.json())
-    .then((data) => {
-      // Remove the deleted vehicle from the tableData array
-      tableData.splice(index, 1);
-
-      // Update the table with the new data
-      displayVehicleData(tableData);
-      console.log(data);
-    })
+    .then(getData)
     .catch((error) => console.error(error));
 }
